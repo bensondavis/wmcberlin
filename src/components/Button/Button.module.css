@@ -1,0 +1,21 @@
+.button {
+  padding: 10px 20px !important;
+  cursor: pointer !important;
+  font-size: 15px !important;
+  text-transform: capitalize;
+}
+
+.button-default {
+  color: var(--color-text-dark) !important;
+  background: transparent !important;
+}
+
+.button-standard {
+  color: var(--color-text-purple) !important;
+  background: var(--color-purple-light-100) !important;
+}
+
+.button-contained {
+  color: var(--color-text-light) !important;
+  background: var(--color-purple-dark-300) !important;
+}

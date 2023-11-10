@@ -1,0 +1,27 @@
+.vision {
+  color: var(--color-text-dark);
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+.vision span {
+  color: var(--color-text-purple);
+}
+
+@media only screen and (min-width: 786px) {
+  .vision {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+}
+
+.container {
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+.hero-circle {
+  position: absolute;
+  /* margin-top: -50px; */
+  z-index: -10;
+}
