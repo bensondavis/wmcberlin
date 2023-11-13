@@ -1,0 +1,13 @@
+.pricing-section {
+  background-color: #F8F8FC;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  padding: 30px 0;
+}

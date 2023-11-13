@@ -1,5 +1,10 @@
+.about-section {
+  padding-bottom: 50px;
+}
+
 .container {
   width: 100%;
+  position: relative;
 }
 
 .align-left {
@@ -17,4 +22,34 @@
 
 .about {
   color: var(--color-text-dark);
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 600;
+
+}
+
+.logo {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  justify-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+/* .logo-container{
+  width: 100%;
+}
+@media screen and (max-width < 600px) {
+  .logo-container {
+    width: 200px;
+  }
+} */
+
+.title {
+  font-size: 2.6rem;
+  line-height: 1.1;
+  font-weight: 700;
 }

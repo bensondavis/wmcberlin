@@ -8,7 +8,7 @@ import { ButtonProps } from "@/components/Button/Button";
 const navbarButtonsData: ButtonProps[] = [
   {
     text: "about",
-    href: "/about",
+    href: "#about",
     startIcon: <InfoIcon />,
     variant: "default",
   },
@@ -32,7 +32,7 @@ const navbarButtonsData: ButtonProps[] = [
   },
   {
     text: "Join",
-    href: "/join",
+    href: "#join",
     startIcon: <HowToRegIcon />,
     variant: "contained",
   },
