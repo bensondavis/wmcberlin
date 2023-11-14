@@ -54,3 +54,11 @@
   width: 40px;
   height: 40px;
 }
+
+.remove-btn svg {
+  color: rgb(209, 28, 28);
+}
+
+.add-btn svg {
+  color: var(--color-text-dark);
+}

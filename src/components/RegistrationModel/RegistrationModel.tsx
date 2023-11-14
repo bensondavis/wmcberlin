@@ -143,7 +143,7 @@ const RegistrationModel = ({
               sx={{ pl: 1 }}
             >
               <Typography>Add People</Typography>
-              <IconButton onClick={handleAddPeople}>
+              <IconButton onClick={handleAddPeople} className={styles["add-btn"]}>
                 <AddCircleIcon />
               </IconButton>
             </Stack>
