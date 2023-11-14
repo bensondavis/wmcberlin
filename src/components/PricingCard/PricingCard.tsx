@@ -10,9 +10,10 @@ export interface PricingCardProps {
   title: string;
   icon: React.ReactNode;
   price: string;
+  onClick: (title: string) => void
 }
 
-const PricingCard = ({ title, icon, price }: PricingCardProps) => {
+const PricingCard = ({ title, icon, price, onClick }: PricingCardProps) => {
   const [hover, setHover] = useState(false);
 
   return (
@@ -20,7 +21,7 @@ const PricingCard = ({ title, icon, price }: PricingCardProps) => {
       className={cx(styles.card, {[styles["hovered-bg"]]: hover})}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      
+      onClick={() => onClick(title)}
     >
       <Stack
         direction={"column"}

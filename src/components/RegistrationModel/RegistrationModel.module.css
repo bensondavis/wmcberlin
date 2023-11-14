@@ -1,0 +1,56 @@
+.modal {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  overflow-y:auto;
+}
+
+.align-item-center {
+  align-items: center !important;
+}
+
+.card {
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
+  height: max-content;
+  outline: none;
+  padding: 40px 30px;
+  border-radius: 20px;
+  position: relative;
+  margin: 20px 0;
+}
+
+@media screen and (width < 600px) {
+  .card {
+    width: calc(100% - 20px);
+  }
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cancel {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.cancel svg {
+  color: var(--color-text-dark);
+}
+
+.submit-btn {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+}
+
+.remove-btn {
+  width: 40px;
+  height: 40px;
+}

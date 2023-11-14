@@ -1,12 +1,34 @@
+"use client";
+
 import styles from "./Pricing.module.css";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import cx from "classnames";
 import PricingData from "@/data/pricing/pricing";
 import PricingCard from "@/components/PricingCard/PricingCard";
+import RegistrationModel, { People } from "@/components/RegistrationModel/RegistrationModel";
 
 const Pricing = () => {
+  const [open, setOpen] = useState(false);
+  const [type, setType] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phn, setPhn] = useState("");
+  const [job, setJob] = useState("");
+  const [peoples, setPeoples] = useState<People[]>([{ fname: "", lname: "" },]);
+
+  const handleClick = (title: string) => {
+    setOpen(true);
+    setType(title);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Box id={"join"} className={cx(styles["pricing-section"])}>
       <Box className={"content-wrapper"}>
@@ -16,17 +38,41 @@ const Pricing = () => {
           spacing={6}
           justifyContent={"center"}
           alignItems={"center"}
-          sx={{width: "100%"}}
+          sx={{ width: "100%" }}
         >
           {PricingData.map((data) => (
             <PricingCard
               icon={data.icon}
               title={data.title}
               price={data.price}
+              onClick={handleClick}
             />
           ))}
         </Stack>
       </Box>
+      <RegistrationModel
+        fname={fname}
+        lname={lname}
+        email={email}
+        phn={phn}
+        job={job}
+        peoples={peoples}
+        setFname={setFname}
+        setLname={setLname}
+        setEmail={setEmail}
+        setJob={setJob}
+        setPeoples={setPeoples}
+        setPhn={setPhn}
+        open={open}
+        onClose={handleClose}
+        type={
+          type === "Student"
+            ? "Student"
+            : type === "Family"
+            ? "Family"
+            : "Single"
+        }
+      />
     </Box>
   );
 };
