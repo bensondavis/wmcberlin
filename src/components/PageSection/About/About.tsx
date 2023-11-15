@@ -6,7 +6,7 @@ import cx from "classnames";
 
 const About = () => {
   return (
-    <Box id={"about"} className={cx(styles.container, styles["about-section"])} >
+    <Box id={"about"} className={cx(styles.container, styles["about-section"])}>
       <Stack
         className={cx("content-wrapper")}
         direction={{ xs: "column-reverse", sm: "column-reverse", md: "row" }}
@@ -15,9 +15,7 @@ const About = () => {
         spacing={3}
       >
         <Box className={cx(styles.container, styles["logo-container"])}>
-          
-            <Image src={logo} alt="logo" className={styles.logo} />
-          
+          <Image src={logo} alt="logo" className={styles.logo} />
         </Box>
         <Box className={styles.container}>
           <Typography className={cx(styles["align-left"], styles.heading)}>

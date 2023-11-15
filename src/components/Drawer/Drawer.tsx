@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Drawer.module.css";
 import { default as MuiDrawer } from "@mui/material/Drawer";
 import { useRouter } from "next/navigation";
 import Box from "@mui/material/Box";
@@ -45,8 +46,14 @@ const Drawer = ({ open, drawerItems, onClose }: DrawerProps) => {
       <List>
         {drawerItems.map((item) => (
           <ListItem key={item.text} disablePadding>
-            <ListItemButton onClick={() => router.push(`${item.href}`)}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
+            <ListItemButton
+              className={styles["list-btn"]}
+              onClick={() => {
+                router.push(`${item.href}`);
+                onClose(false);
+              }}
+            >
+              <ListItemIcon className={styles["list-icon"]}>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>

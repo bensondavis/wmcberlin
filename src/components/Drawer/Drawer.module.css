@@ -1,0 +1,15 @@
+.list-btn {
+  width: 100%;
+}
+
+.list-btn:hover {
+  background-color: #F8F5FF;
+}
+
+.list-btn:active {
+  background-color: var(--color-purple-light-500);
+}
+
+.list-icon svg {
+  color: var(--color-purple-light-500);
+}

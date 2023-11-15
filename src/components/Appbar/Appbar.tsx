@@ -77,12 +77,10 @@ const Appbar = () => {
       </Stack>
       <IconButton
         sx={{
-          display: { md: "none", lg: "none", xl: "none" },
-          width: 40,
-          height: 40,
-          mr: 2,
-          mt: 3,
+          // display: { md: "none", lg: "none", xl: "none" },
+          
         }}
+        className={styles["menu-btn"]}
         onClick={handleClick}
       >
         {!open ? <MenuIcon /> : <MenuOpenIcon />}

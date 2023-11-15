@@ -1,14 +1,13 @@
 import InfoIcon from "@mui/icons-material/Info";
 import GroupsIcon from "@mui/icons-material/Groups";
 import CollectionsIcon from "@mui/icons-material/Collections";
-import CallIcon from "@mui/icons-material/Call";
-import HowToRegIcon from "@mui/icons-material/HowToReg";
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import { ButtonProps } from "@/components/Button/Button";
 
 const navbarButtonsData: ButtonProps[] = [
   {
     text: "about",
-    href: "#about",
+    href: "http://localhost:3000/#about",
     startIcon: <InfoIcon />,
     variant: "default",
   },
@@ -25,15 +24,9 @@ const navbarButtonsData: ButtonProps[] = [
     variant: "default",
   },
   {
-    text: "contact",
-    href: "/contact",
-    startIcon: <CallIcon />,
-    variant: "default",
-  },
-  {
     text: "Join",
-    href: "#join",
-    startIcon: <HowToRegIcon />,
+    href: "http://localhost:3000/#join",
+    startIcon: <PersonAddAlt1Icon />,
     variant: "contained",
   },
 ];
