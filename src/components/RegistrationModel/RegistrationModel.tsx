@@ -35,7 +35,7 @@ interface RegistrationModelProps {
   open: boolean;
   onClose: () => void;
   type: "Student" | "Family" | "Single";
-  onSubmit: () => void
+  onSubmit: () => void;
 }
 
 const RegistrationModel = ({
@@ -54,7 +54,7 @@ const RegistrationModel = ({
   setJob,
   peoples,
   setPeoples,
-  onSubmit
+  onSubmit,
 }: RegistrationModelProps) => {
   const cardRef = useRef<HTMLDivElement>();
   const [cardHeight, setCardHeight] = useState(0);
@@ -138,54 +138,59 @@ const RegistrationModel = ({
             onChange={(e) => setPhn(e.target.value)}
           />
 
-          {type === "Family" ? <Stack direction={"column"} spacing={3}>
-            <Stack
-              direction={"row"}
-              justifyContent={"space-between"}
-              sx={{ pl: 1 }}
-            >
-              <Typography>Add People</Typography>
-              <IconButton onClick={handleAddPeople} className={styles["add-btn"]}>
-                <AddCircleIcon />
-              </IconButton>
-            </Stack>
-            {peoples.map((data, index) => (
+          {type === "Family" ? (
+            <Stack direction={"column"} spacing={3}>
               <Stack
                 direction={"row"}
-                justifyContent={"space-evenly"}
-                alignItems={"center"}
-                spacing={2}
+                justifyContent={"space-between"}
+                sx={{ pl: 1 }}
               >
+                <Typography>Add People</Typography>
+                <IconButton
+                  onClick={handleAddPeople}
+                  className={styles["add-btn"]}
+                >
+                  <AddCircleIcon />
+                </IconButton>
+              </Stack>
+              {peoples.map((data, index) => (
                 <Stack
-                  direction={{ xs: "column", sm: "row", md: "row" }}
+                  key={index}
+                  direction={"row"}
                   justifyContent={"space-evenly"}
                   alignItems={"center"}
                   spacing={2}
                 >
-                  <TextField
-                    label="First Name"
-                    variant="outlined"
-                    value={data.fname}
-                    onChange={(e) => handlePeopleFname(index, e.target.value)}
-                  />
-                  <TextField
-                    label="Last Name"
-                    variant="outlined"
-                    value={data.lname}
-                    onChange={(e) => handlePeopleLname(index, e.target.value)}
-                  />
-                </Stack>
+                  <Stack
+                    direction={{ xs: "column", sm: "row", md: "row" }}
+                    justifyContent={"space-evenly"}
+                    alignItems={"center"}
+                    spacing={2}
+                  >
+                    <TextField
+                      label="First Name"
+                      variant="outlined"
+                      value={data.fname}
+                      onChange={(e) => handlePeopleFname(index, e.target.value)}
+                    />
+                    <TextField
+                      label="Last Name"
+                      variant="outlined"
+                      value={data.lname}
+                      onChange={(e) => handlePeopleLname(index, e.target.value)}
+                    />
+                  </Stack>
 
-                <IconButton
-                  className={styles["remove-btn"]}
-                  onClick={() => handleRemove(index)}
-                >
-                  <RemoveCircleIcon />
-                </IconButton>
-              </Stack>
-            ))}
-          </Stack> : null}
-          
+                  <IconButton
+                    className={styles["remove-btn"]}
+                    onClick={() => handleRemove(index)}
+                  >
+                    <RemoveCircleIcon />
+                  </IconButton>
+                </Stack>
+              ))}
+            </Stack>
+          ) : null}
         </Stack>
         <Button
           variant="contained"

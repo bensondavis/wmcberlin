@@ -72,8 +72,9 @@ const Pricing = () => {
           alignItems={"center"}
           sx={{ width: "100%" }}
         >
-          {PricingData.map((data) => (
+          {PricingData.map((data, index) => (
             <PricingCard
+              key={index}
               icon={data.icon}
               title={data.title}
               price={data.price}

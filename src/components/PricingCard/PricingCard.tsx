@@ -1,16 +1,17 @@
-"use client"
+"use client";
 
 import styles from "./PricingCard.module.css";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import cx from "classnames"
+import cx from "classnames";
 import { useState } from "react";
 
 export interface PricingCardProps {
   title: string;
   icon: React.ReactNode;
   price: string;
-  onClick: (title: string) => void
+  key?: string | number;
+  onClick: (title: string) => void;
 }
 
 const PricingCard = ({ title, icon, price, onClick }: PricingCardProps) => {
@@ -18,7 +19,7 @@ const PricingCard = ({ title, icon, price, onClick }: PricingCardProps) => {
 
   return (
     <Box
-      className={cx(styles.card, {[styles["hovered-bg"]]: hover})}
+      className={cx(styles.card, { [styles["hovered-bg"]]: hover })}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => onClick(title)}
@@ -30,9 +31,15 @@ const PricingCard = ({ title, icon, price, onClick }: PricingCardProps) => {
         justifyContent={"center"}
         className={styles.stack}
       >
-        <Box className={cx(styles.icon, {[styles["hovered-text"]]: hover})}>{icon}</Box>
-        <Box className={cx(styles.title, {[styles["hovered-text"]]: hover})}>{title}</Box>
-        <Box className={cx(styles.price, {[styles["hovered-text"]]: hover})}>€{price}</Box>
+        <Box className={cx(styles.icon, { [styles["hovered-text"]]: hover })}>
+          {icon}
+        </Box>
+        <Box className={cx(styles.title, { [styles["hovered-text"]]: hover })}>
+          {title}
+        </Box>
+        <Box className={cx(styles.price, { [styles["hovered-text"]]: hover })}>
+          €{price}
+        </Box>
       </Stack>
     </Box>
   );
