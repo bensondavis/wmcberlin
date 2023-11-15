@@ -6,7 +6,14 @@ import Divider from "@mui/material/Divider";
 export default function NotFound() {
   return (
     <Box sx={{ width: "100%", height: "auto" }}>
-      <Box sx={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}>
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
         <Stack
           direction={"row"}
           spacing={2}

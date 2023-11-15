@@ -1,0 +1,36 @@
+.container {
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 28px;
+  color: var(--color-text-dark);
+  text-align: center;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.team-container {
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  top: -30%;
+  right: -40%;
+  z-index: -10;
+}
+
+@media screen and (width < 900px) {
+  .circle {
+    display: none;
+  }
+}

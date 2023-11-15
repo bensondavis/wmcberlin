@@ -7,12 +7,8 @@ import Image from "next/image";
 
 const Gallery = () => {
   return (
-    <Box className={cx("content-wrapper")}>
-      <Grid
-        container
-        spacing={2}
-        justifyContent={"center"}
-      >
+    <Box className={cx("content-wrapper", styles.container)}>
+      <Grid container spacing={2} justifyContent={"center"}>
         {GalleryData.map((data, index) => (
           <Grid
             item

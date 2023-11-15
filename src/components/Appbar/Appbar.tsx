@@ -13,13 +13,13 @@ import type { drawerItem } from "../Drawer/Drawer";
 import Button, { ButtonProps } from "../Button/Button";
 import logo from "@/assets/logo.png";
 import navbarButtonsData from "@/data/navbar-buttons/navbarButtons";
-import '@fontsource-variable/lexend-deca';
+import "@fontsource-variable/lexend-deca";
 import { Lexend_Deca } from "next/font/google";
 
 const lexaDeca = Lexend_Deca({
   weight: "800",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 const navButtons: ButtonProps[] = navbarButtonsData.map((data) => ({
   text: data.text,
@@ -55,13 +55,25 @@ const Appbar = () => {
       }}
     >
       <Link href={"/"}>
-        <Stack direction={"row"} className={styles.logo} alignItems={"center"} spacing={1}>
+        <Stack
+          direction={"row"}
+          className={styles.logo}
+          alignItems={"center"}
+          spacing={1}
+        >
           <Image src={logo} alt="logo" className={styles.logo} />
-          <Typography className={cx(styles.title, lexaDeca)}>WMC Berlin</Typography>
+          <Typography className={cx(styles.title, lexaDeca)}>
+            WMC Berlin
+          </Typography>
         </Stack>
       </Link>
 
-      <Stack sx={{ display: { xs: "none", md: "block" }, pt: 3 }}>
+      <Stack
+        spacing={1}
+        sx={{ display: { xs: "none", md: "block" }, pt: 3 }}
+        alignItems={"center"}
+        direction={"row"}
+      >
         {navButtons.map((button, index) => (
           <Button
             myKey={button.text}
@@ -70,19 +82,10 @@ const Appbar = () => {
             variant={button.variant}
             href={button.href}
             startIcon={button.startIcon}
-            endIcon={button.endIcon}
-            className={button.className}
           />
         ))}
       </Stack>
-      <IconButton
-        sx={{
-          // display: { md: "none", lg: "none", xl: "none" },
-          
-        }}
-        className={styles["menu-btn"]}
-        onClick={handleClick}
-      >
+      <IconButton className={styles["menu-btn"]} onClick={handleClick}>
         {!open ? <MenuIcon /> : <MenuOpenIcon />}
       </IconButton>
       <Drawer open={open} onClose={handleClose} drawerItems={drawerItems} />
