@@ -7,7 +7,7 @@ import { ButtonProps } from "@/components/Button/Button";
 const navbarButtonsData: ButtonProps[] = [
   {
     text: "about",
-    href: "http://localhost:3000/#about",
+    href: "https://wmcberlin.de/#about",
     startIcon: <InfoIcon />,
     variant: "default",
   },
@@ -25,7 +25,7 @@ const navbarButtonsData: ButtonProps[] = [
   },
   {
     text: "Join",
-    href: "http://localhost:3000/#join",
+    href: "http://wmcberlin.de/#join",
     startIcon: <PersonAddAlt1Icon />,
     variant: "contained",
   },

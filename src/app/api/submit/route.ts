@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
 
   const mailData = {
     from: process.env.EMAIL_ID,
-    to: process.env.EMAIL_ID,
+    to: process.env.EMAIL_TO,
     subject: `New registration - ${fname} ${lname}`,
     text: `${body.fname} ${body.lname} new`,
     html: `<div>
