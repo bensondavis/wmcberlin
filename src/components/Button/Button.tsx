@@ -10,7 +10,8 @@ export interface ButtonProps {
   endIcon?: React.ReactNode;
   href?: string;
   className?: string;
-  myKey?: Key
+  myKey?: Key;
+  onClick?: () => void;
 }
 
 const Button = ({
@@ -20,7 +21,8 @@ const Button = ({
   endIcon,
   href,
   className,
-  myKey
+  myKey,
+  onClick,
 }: ButtonProps) => {
   const classNames = cx(styles.button, styles[`button-${variant}`], className);
   return (
@@ -30,7 +32,8 @@ const Button = ({
       startIcon={startIcon}
       endIcon={endIcon}
       href={href}
-      sx={{fontWeight: 600, }}
+      sx={{ fontWeight: 600 }}
+      onClick={onClick}
     >
       {text}
     </MuiButton>

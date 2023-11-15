@@ -35,6 +35,7 @@ interface RegistrationModelProps {
   open: boolean;
   onClose: () => void;
   type: "Student" | "Family" | "Single";
+  onSubmit: () => void
 }
 
 const RegistrationModel = ({
@@ -53,6 +54,7 @@ const RegistrationModel = ({
   setJob,
   peoples,
   setPeoples,
+  onSubmit
 }: RegistrationModelProps) => {
   const cardRef = useRef<HTMLDivElement>();
   const [cardHeight, setCardHeight] = useState(0);
@@ -189,6 +191,7 @@ const RegistrationModel = ({
           variant="contained"
           text="Submit"
           className={styles["submit-btn"]}
+          onClick={onSubmit}
         />
       </Box>
     </Modal>

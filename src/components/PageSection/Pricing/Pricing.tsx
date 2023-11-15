@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import styles from "./Pricing.module.css";
 import { useState } from "react";
 import Box from "@mui/material/Box";
@@ -8,7 +9,9 @@ import Stack from "@mui/material/Stack";
 import cx from "classnames";
 import PricingData from "@/data/pricing/pricing";
 import PricingCard from "@/components/PricingCard/PricingCard";
-import RegistrationModel, { People } from "@/components/RegistrationModel/RegistrationModel";
+import RegistrationModel, {
+  People,
+} from "@/components/RegistrationModel/RegistrationModel";
 
 const Pricing = () => {
   const [open, setOpen] = useState(false);
@@ -18,7 +21,7 @@ const Pricing = () => {
   const [email, setEmail] = useState("");
   const [phn, setPhn] = useState("");
   const [job, setJob] = useState("");
-  const [peoples, setPeoples] = useState<People[]>([{ fname: "", lname: "" },]);
+  const [peoples, setPeoples] = useState<People[]>([{ fname: "", lname: "" }]);
 
   const handleClick = (title: string) => {
     setOpen(true);
@@ -27,6 +30,35 @@ const Pricing = () => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleSubmit = () => {
+    console.log(window.location.origin);
+    axios
+      .post(
+        `${window.location.origin}/api/submit`,
+        {
+          fname: fname,
+          lname: lname,
+          email: email,
+          phn: phn,
+          job: job,
+          peoples: peoples,
+          type: type,
+        },
+        {
+          headers: {
+            accept: "*/*",
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        console.log({ res });
+      })
+      .catch((err) => {
+        console.log({ err });
+      });
   };
 
   return (
@@ -65,6 +97,7 @@ const Pricing = () => {
         setPhn={setPhn}
         open={open}
         onClose={handleClose}
+        onSubmit={handleSubmit}
         type={
           type === "Student"
             ? "Student"

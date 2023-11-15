@@ -8,16 +8,19 @@ const PricingData: PricingCardProps[] = [
     icon: <FamilyRestroomIcon />,
     title: "Family",
     price: "15",
+    onClick: () => {},
   },
   {
     icon: <PersonIcon />,
     title: "Single",
     price: "10",
+    onClick: () => {},
   },
   {
     icon: <SchoolIcon />,
     title: "Student",
     price: "5",
+    onClick: () => {},
   },
 ];
 

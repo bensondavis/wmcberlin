@@ -6,6 +6,7 @@ import { Box } from "@mui/material";
 import Pricing from "@/components/PageSection/Pricing/Pricing";
 
 export default function Home() {
+  
   return (
     <main className={styles.main}>
       <Hero />
