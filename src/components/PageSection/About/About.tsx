@@ -14,10 +14,10 @@ const About = () => {
         alignItems={"center"}
         spacing={3}
       >
-        <Box className={styles.container}>
-          <Box className={styles["logo-container"]}>
+        <Box className={cx(styles.container, styles["logo-container"])}>
+          
             <Image src={logo} alt="logo" className={styles.logo} />
-          </Box>
+          
         </Box>
         <Box className={styles.container}>
           <Typography className={cx(styles["align-left"], styles.heading)}>

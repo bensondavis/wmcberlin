@@ -29,24 +29,21 @@
 }
 
 .logo {
-  max-width: 500px;
-  width: 100%;
+  max-width: 300px;
+  width: 60%;
   height: auto;
-  justify-self: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 0%);
 }
 
-/* .logo-container{
-  width: 100%;
+.logo-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-@media screen and (max-width < 600px) {
+@media screen and (width < 600px) {
   .logo-container {
-    width: 200px;
+    width: 80%;
   }
-} */
+} 
 
 .title {
   font-size: 2.6rem;

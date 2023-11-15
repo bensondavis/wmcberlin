@@ -11,3 +11,15 @@
   position: relative;
   width: calc(100% - 20px);
 }
+
+.logo {
+  width: auto;
+  height: 100px;
+  /* margin-left: 10px; */
+}
+
+.title {
+  /* font-weight: 500; */
+  font-weight: bold;
+  font-size: 22px;
+}
