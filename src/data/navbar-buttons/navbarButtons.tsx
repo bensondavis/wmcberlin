@@ -6,19 +6,19 @@ import { ButtonProps } from "@/components/Button/Button";
 
 const navbarButtonsData: ButtonProps[] = [
   {
-    text: "about",
+    text: "About",
     href: "https://wmcberlin.de/#about",
     startIcon: <InfoIcon />,
     variant: "default",
   },
   {
-    text: "gallery",
+    text: "Gallery",
     href: "/gallery",
     startIcon: <CollectionsIcon />,
     variant: "default",
   },
   {
-    text: "team",
+    text: "Team",
     href: "/team",
     startIcon: <GroupsIcon />,
     variant: "default",
