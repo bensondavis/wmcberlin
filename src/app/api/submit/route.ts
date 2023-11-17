@@ -2,14 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { People } from "@/components/RegistrationModel/RegistrationModel";
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_ID,
-    pass: process.env.EMAIL_PWD,
-  },
-  secure: true,
-});
+
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -23,14 +16,23 @@ export async function POST(req: NextRequest) {
   const peoples = body.peoples;
   const amount = type === "Family" ? 15 : type === "Single" ? 10 : 5;
 
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_ID,
+      pass: process.env.EMAIL_PWD,
+    },
+    secure: true,
+  });
+
   const mailData = {
     from: process.env.EMAIL_ID,
     to: process.env.EMAIL_TO,
     subject: `New registration - ${fname} ${lname}`,
     text: `${body.fname} ${body.lname} new`,
     html: `<div>
-        <div style="fontSize: 22px;">${fname} ${lname}</div>
-        <div>
+        <h2 style="fontSize: 22px;">${fname} ${lname}</h2>
+        <h3>
           Type: ${type}<br/>
           Fname: ${fname}<br/>
           Lname: ${lname}<br/>
@@ -45,11 +47,11 @@ export async function POST(req: NextRequest) {
               : ""
           }
           Amount: ${amount}€
-        </div>
+        </h3>
       </div>`,
   };
 
-  transporter.sendMail(mailData);
+  await transporter.sendMail(mailData);
 
   return NextResponse.json({
     success: true,
