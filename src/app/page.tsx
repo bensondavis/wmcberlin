@@ -3,7 +3,7 @@ import Circle from "@/components/Circle/Circle";
 import Hero from "@/components/PageSection/Hero/Hero";
 import About from "@/components/PageSection/About/About";
 import { Box } from "@mui/material";
-import Pricing from "@/components/PageSection/Pricing/Pricing";
+import Register from "@/components/PageSection/Register/Register";
 
 export default function Home() {
   
@@ -18,7 +18,7 @@ export default function Home() {
         />
       </Box>
       <About />
-      <Pricing />
+      <Register />
     </main>
   );
 }

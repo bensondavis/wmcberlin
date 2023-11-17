@@ -10,7 +10,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
 export interface drawerItem {
-  text: string;
+  text: React.ReactNode;
   icon?: React.ReactNode;
   href?: string;
 }
@@ -44,8 +44,8 @@ const Drawer = ({ open, drawerItems, onClose }: DrawerProps) => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {drawerItems.map((item) => (
-          <ListItem key={item.text} disablePadding>
+        {drawerItems.map((item, index) => (
+          <ListItem key={index} disablePadding>
             <ListItemButton
               className={styles["list-btn"]}
               onClick={() => {

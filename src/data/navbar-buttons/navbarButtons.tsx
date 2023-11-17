@@ -7,25 +7,25 @@ import { BASE_API_URL } from "@/utils/constants";
 
 const navbarButtonsData: ButtonProps[] = [
   {
-    text: "About",
+    children: "About",
     href: `${BASE_API_URL}/#about`,
     startIcon: <InfoIcon />,
     variant: "default",
   },
   {
-    text: "Gallery",
+    children: "Gallery",
     href: "/gallery",
     startIcon: <CollectionsIcon />,
     variant: "default",
   },
   {
-    text: "Team",
+    children: "Team",
     href: "/team",
     startIcon: <GroupsIcon />,
     variant: "default",
   },
   {
-    text: "Join",
+    children: "Join",
     href: `${BASE_API_URL}/#join`,
     startIcon: <PersonAddAlt1Icon />,
     variant: "contained",

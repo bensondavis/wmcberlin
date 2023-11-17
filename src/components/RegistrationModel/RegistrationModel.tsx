@@ -1,10 +1,8 @@
-"use client";
-
 import styles from "./RegistrationModel.module.css";
 import cx from "classnames";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import Modal from "@mui/material/Modal";
+import Dialog from "@mui/material/Dialog";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import CancelIcon from "@mui/icons-material/Cancel";
@@ -12,7 +10,6 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { IconButton } from "@mui/material";
 import Button from "../Button/Button";
-import { useEffect, useRef, useState } from "react";
 
 export interface People {
   fname: string;
@@ -56,10 +53,6 @@ const RegistrationModel = ({
   setPeoples,
   onSubmit,
 }: RegistrationModelProps) => {
-  const cardRef = useRef<HTMLDivElement>();
-  const [cardHeight, setCardHeight] = useState(0);
-  const [viewport, setViewport] = useState(0);
-
   const handlePeopleFname = (index: number, newFname: string) => {
     const newPeoples = [...peoples];
     newPeoples[index].fname = newFname;
@@ -81,25 +74,9 @@ const RegistrationModel = ({
     setPeoples(filteredPeoples);
   };
 
-  useEffect(() => {
-    if (cardRef.current?.offsetHeight) {
-      setCardHeight(cardRef.current?.offsetHeight);
-    }
-  }, [cardRef.current?.offsetHeight]);
-
-  useEffect(() => {
-    setViewport(window.innerHeight);
-  }, []);
-
   return (
-    <Modal
-      open={open}
-      onClose={onClose}
-      className={cx(styles.modal, {
-        [styles["align-item-center"]]: cardHeight < viewport,
-      })}
-    >
-      <Box ref={cardRef} className={styles.card}>
+    <Dialog open={open} onClose={onClose} className={cx(styles.modal)}>
+      <Box className={styles.card}>
         <IconButton className={styles.cancel} onClick={onClose}>
           <CancelIcon />
         </IconButton>
@@ -194,12 +171,13 @@ const RegistrationModel = ({
         </Stack>
         <Button
           variant="contained"
-          text="Submit"
           className={styles["submit-btn"]}
           onClick={onSubmit}
-        />
+        >
+          Submit
+        </Button>
       </Box>
-    </Modal>
+    </Dialog>
   );
 };
 

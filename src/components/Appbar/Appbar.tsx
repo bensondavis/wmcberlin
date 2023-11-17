@@ -22,13 +22,13 @@ const lexaDeca = Lexend_Deca({
 });
 
 const navButtons: ButtonProps[] = navbarButtonsData.map((data) => ({
-  text: data.text,
+  children: data.children,
   variant: data.variant,
   href: data.href,
 }));
 
 const drawerItems: drawerItem[] = navbarButtonsData.map((data) => ({
-  text: data.text,
+  text: data.children,
   icon: data.startIcon,
   href: data.href,
 }));
@@ -67,9 +67,8 @@ const Appbar = () => {
       >
         {navButtons.map((button, index) => (
           <Button
-            myKey={button.text}
-            key={button.text + index}
-            text={button.text}
+            key={index}
+            children={button.children}
             variant={button.variant}
             href={button.href}
             startIcon={button.startIcon}
