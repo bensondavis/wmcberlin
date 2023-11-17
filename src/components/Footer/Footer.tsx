@@ -6,7 +6,8 @@ const Footer = () => {
   return (
     <Box className={styles["footer-container"]}>
       <Stack direction={"row"}>
-        <Typography className={styles.text}>WMC Berlin •</Typography>
+        <Typography className={styles.text}>WMC Berlin</Typography>
+        <Typography>•</Typography>
         <EmailIcon className={styles.icon} />
         <Typography className={styles.text}>worldmalayaleecouncil.berlin@gmail.com</Typography>
       </Stack>

@@ -12,7 +12,7 @@ const TeamCard = ({ name, img, title }: TeamCardProps) => {
   return (
     <Stack direction={"column"} spacing={1} className={styles.card}>
       <Box >
-      <Image src={img} alt="profile pic" className={styles.img} />
+      <Image src={img} alt="profile pic" className={styles.img} priority/>
 
       </Box>
       <Typography className={styles.name}>{name}</Typography>

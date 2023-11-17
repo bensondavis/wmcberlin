@@ -1,4 +1,5 @@
 import styles from "./Hero.module.css";
+import cx from "classnames";
 import { Box, Stack } from "@mui/material";
 import { Nunito_Sans } from "next/font/google";
 import slideShowData from "@/data/slideShow/slideShow";
@@ -38,22 +39,13 @@ const Hero = () => {
             <span>Together</span>.
           </Box>
         </Stack>
-        <Box
-          className={styles.container}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <Box className={cx(styles.container, styles["slideshow-container"])}>
           <SlideShow images={slideShowData} />
-          <Box sx={{ display: { md: "none", xs: "contents" } }}>
-            <Circle
-              radius="55vw"
-              color="#FDFAF4"
-              className={styles["hero-circle"]}
-            />
-          </Box>
+          <Circle
+            radius="55vw"
+            color="#FDFAF4"
+            className={styles["hero-circle"]}
+          />
         </Box>
       </Stack>
     </Box>
