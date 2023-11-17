@@ -3,6 +3,7 @@
   justify-content: space-between;
   flex-direction: row;
   margin: auto !important;
+  padding: 30px 0px !important;
 }
 
 .content-wrapper {
@@ -15,11 +16,9 @@
 .logo {
   width: auto;
   height: 100px;
-  /* margin-left: 10px; */
 }
 
 .title {
-  /* font-weight: 500; */
   font-weight: bold;
   font-size: 22px;
 }
@@ -32,8 +31,22 @@
   color: var(--color-text-dark);
 }
 
-@media screen and (width > 900px) {
+.nav-btns {
+  padding-top: 6px;
+}
+
+@media screen and (width > 899px) {
   .menu-btn {
+    display: none;
+  }
+}
+
+@media screen and (width < 900px) {
+  .appbar {
+    padding: 15px 0px !important;
+  }
+
+  .nav-btns {
     display: none;
   }
 }

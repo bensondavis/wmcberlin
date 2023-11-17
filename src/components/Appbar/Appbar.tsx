@@ -44,16 +44,7 @@ const Appbar = () => {
   };
   const classNames = cx(styles["content-wrapper"], styles.appbar);
   return (
-    <Box
-      className={classNames}
-      sx={{
-        p: {
-          md: "30px 0px !important",
-          sm: "15px 0px !important",
-          xs: "15px 0px !important",
-        },
-      }}
-    >
+    <Box className={classNames}>
       <Link href={"/"}>
         <Stack
           direction={"row"}
@@ -70,9 +61,9 @@ const Appbar = () => {
 
       <Stack
         spacing={1}
-        sx={{ display: { xs: "none", md: "block" }, pt: 3 }}
         alignItems={"center"}
         direction={"row"}
+        className={styles["nav-btns"]}
       >
         {navButtons.map((button, index) => (
           <Button
