@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { People } from "@/components/RegistrationModel/RegistrationModel";
-import 'dotenv/config'
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -50,14 +49,11 @@ export async function POST(req: NextRequest) {
       </div>`,
   };
 
-  transporter
-    .sendMail(mailData)
-    .then(() => {
-      console.log("mail send");
-    })
-    .catch((err) => {
-      console.log({ err });
-    });
+  transporter.sendMail(mailData);
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json({
+    success: true,
+    emailId: process.env.EMAIL_ID,
+    emailPwd: process.env.EMAIL_PWD,
+  });
 }

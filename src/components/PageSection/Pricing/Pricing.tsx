@@ -12,6 +12,7 @@ import PricingCard from "@/components/PricingCard/PricingCard";
 import RegistrationModel, {
   People,
 } from "@/components/RegistrationModel/RegistrationModel";
+import { BASE_API_URL } from "@/utils/constants";
 
 const Pricing = () => {
   const [open, setOpen] = useState(false);
@@ -23,6 +24,8 @@ const Pricing = () => {
   const [job, setJob] = useState("");
   const [peoples, setPeoples] = useState<People[]>([{ fname: "", lname: "" }]);
 
+  if (!BASE_API_URL) return;
+
   const handleClick = (title: string) => {
     setOpen(true);
     setType(title);
@@ -33,10 +36,9 @@ const Pricing = () => {
   };
 
   const handleSubmit = () => {
-    console.log(window.location.origin);
     axios
       .post(
-        `${window.location.origin}/api/submit`,
+        `${BASE_API_URL}/api/submit`,
         {
           fname: fname,
           lname: lname,

@@ -3,11 +3,12 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import { ButtonProps } from "@/components/Button/Button";
+import { BASE_API_URL } from "@/utils/constants";
 
 const navbarButtonsData: ButtonProps[] = [
   {
     text: "About",
-    href: "https://wmcberlin.de/#about",
+    href: `${BASE_API_URL}/#about`,
     startIcon: <InfoIcon />,
     variant: "default",
   },
@@ -25,7 +26,7 @@ const navbarButtonsData: ButtonProps[] = [
   },
   {
     text: "Join",
-    href: "http://wmcberlin.de/#join",
+    href: `${BASE_API_URL}/#join`,
     startIcon: <PersonAddAlt1Icon />,
     variant: "contained",
   },
