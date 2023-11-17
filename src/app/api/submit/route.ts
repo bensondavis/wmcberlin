@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { People } from "@/components/RegistrationModel/RegistrationModel";
+import 'dotenv/config'
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
