@@ -47,7 +47,8 @@ body {
   overflow-x: hidden;
   color: var(--color-text-dark);
   background-color: white;
-  min-height: auto;
+  min-height: 100vh;
+  position: relative;
 }
 
 a {
@@ -60,4 +61,18 @@ a {
   position: relative;
   width: calc(100% - 20px);
   margin: 0 auto;
+}
+
+.circle {
+  position: absolute;
+  top: -10%;
+  right: -30%;
+  z-index: -10;
+  overflow: hidden;
+}
+
+@media screen and (width < 900px) {
+  .circle {
+    display: none;
+  }
 }

@@ -19,7 +19,6 @@ export default function Home() {
       </Box>
       <About />
       <Pricing />
-      <Circle radius="60vh" color="#F8F5FE" className={styles.circle} />
     </main>
   );
 }

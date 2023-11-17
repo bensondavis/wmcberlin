@@ -3,7 +3,6 @@ import cx from "classnames";
 import TeamCard from "@/components/TeamCard/TeamCard";
 import TeamData from "@/data/team/team";
 import { Box, Grid, Typography } from "@mui/material";
-import Circle from "@/components/Circle/Circle";
 
 const Team = () => {
   return (
@@ -23,7 +22,6 @@ const Team = () => {
           </Grid>
         ))}
       </Grid>
-      <Circle radius="60vh" color="#F8F5FE" className={styles.circle} />
     </Box>
   );
 };
