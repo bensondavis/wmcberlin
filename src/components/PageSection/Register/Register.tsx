@@ -47,13 +47,13 @@ const Register = () => {
       .post(
         `${BASE_API_URL}/api/submit`,
         {
+          type: type,
           fname: fname,
           lname: lname,
           email: email,
           phn: phn,
           job: job,
           peoples: peoples,
-          type: type,
         },
         {
           headers: {
