@@ -68,11 +68,12 @@ const Appbar = () => {
         {navButtons.map((button, index) => (
           <Button
             key={index}
-            children={button.children}
             variant={button.variant}
             href={button.href}
             startIcon={button.startIcon}
-          />
+          >
+            {button.children}
+          </Button>
         ))}
       </Stack>
       <IconButton className={styles["menu-btn"]} onClick={handleClick}>
