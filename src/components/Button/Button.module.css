@@ -19,3 +19,8 @@
   color: var(--color-text-light) !important;
   background: var(--color-purple-dark-300) !important;
 }
+
+.disabled {
+  color: #979da3 !important;
+  background: #cdcecf !important;
+}

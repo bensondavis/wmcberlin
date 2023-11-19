@@ -29,7 +29,6 @@
   /* background */
   --color-bg-purple-light: var(--color-purple-light-100);
   --color-bg-purple-dark: var(--color-purple-dark-300);
-
 }
 
 * {
@@ -40,7 +39,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -74,5 +73,11 @@ a {
 @media screen and (width < 900px) {
   .circle {
     display: none;
+  }
+}
+
+@media screen and (width < 600px) {
+  html {
+    overflow-x: hidden;
   }
 }

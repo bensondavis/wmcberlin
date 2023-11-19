@@ -9,6 +9,7 @@ export interface ButtonProps {
   endIcon?: React.ReactNode;
   href?: string;
   className?: string;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
@@ -19,9 +20,10 @@ const Button = ({
   endIcon,
   href,
   className,
+  disabled,
   onClick,
 }: ButtonProps) => {
-  const classNames = cx(styles.button, styles[`button-${variant}`], className);
+  const classNames = cx(styles.button, styles[`button-${variant}`], className, {[styles.disabled]: disabled});
   return (
     <MuiButton
       className={classNames}
@@ -30,6 +32,7 @@ const Button = ({
       href={href}
       sx={{ fontWeight: 600 }}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </MuiButton>
