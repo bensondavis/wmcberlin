@@ -139,7 +139,19 @@ const RegistrationModel = ({ open, onClose, type }: RegistrationModelProps) => {
     if (fname && lname && email && phn && job && type === "Single") {
       setDisabled(false);
     }
-  }, [fname, lname, email, phn, job, type]);
+    if (
+      fname &&
+      lname &&
+      email &&
+      phn &&
+      job &&
+      peoples[0].fname &&
+      peoples[0].lname &&
+      type === "Family"
+    ) {
+      setDisabled(false);
+    }
+  }, [fname, lname, email, phn, job, type, peoples]);
 
   return (
     <>
