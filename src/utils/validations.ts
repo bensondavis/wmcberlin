@@ -57,6 +57,13 @@ const phoneValidation = (value: string) => {
     };
   }
 
+  if (value.length > 15) {
+    return {
+      error: true,
+      message: "Invalid phone number length!",
+    };
+  }
+
   return {
     error: false,
     message: "",

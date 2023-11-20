@@ -111,7 +111,7 @@ const RegistrationModel = ({ open, onClose, type }: RegistrationModelProps) => {
           },
         }
       )
-      .then((res) => {
+      .then(() => {
         onClose();
         handleReset();
         setLoading(false);
@@ -121,8 +121,7 @@ const RegistrationModel = ({ open, onClose, type }: RegistrationModelProps) => {
           message: "Registration Submitted",
         });
       })
-      .catch((err) => {
-        console.log({ err });
+      .catch(() => {
         setLoading(false);
         setSnackBar({
           open: true,
@@ -139,24 +138,21 @@ const RegistrationModel = ({ open, onClose, type }: RegistrationModelProps) => {
     if (fname && lname && email && phn && job && type === "Single") {
       setDisabled(false);
     }
-    if (
-      fname &&
-      lname &&
-      email &&
-      phn &&
-      job &&
-      peoples[0].fname &&
-      peoples[0].lname &&
-      type === "Family"
-    ) {
-      setDisabled(false);
+    if (fname && lname && email && phn && job && peoples && type === "Family") {
+      peoples.forEach((people) => {
+        if (!people.fname || !people.lname) {
+          setDisabled(true);
+          return;
+        }
+        setDisabled(false);
+      });
     }
   }, [fname, lname, email, phn, job, type, peoples]);
 
   return (
     <>
       <Dialog open={open} onClose={onClose} className={cx(styles.modal)}>
-        <Box className={styles.card}>
+        <Box className={styles.card} component="form" autoComplete="off">
           <IconButton className={styles.cancel} onClick={onClose}>
             <CancelIcon />
           </IconButton>

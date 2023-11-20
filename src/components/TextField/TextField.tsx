@@ -52,7 +52,7 @@ const TextField = ({
     if (value) {
       handleValidation();
     }
-  }, []);
+  }, [value]);
 
   useEffect(() => {
     if (error && onError) {

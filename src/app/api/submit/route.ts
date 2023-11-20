@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
       } ${
         type === "Family"
           ? `<h3 class="form-heading" align="left">Additional People</h3><p class="form-answer" align="left">${peoples.map(
-              (data: People) => `${data.fname} ${data.lname}`
+              (data: People) => `${data.fname} ${data.lname} `
             )}</p>`
           : ""
       } <h3 class="form-heading" align="left">Amount</h3><p class="form-answer" align="left">€${amount}</p> </div> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> </body> </html>`,
