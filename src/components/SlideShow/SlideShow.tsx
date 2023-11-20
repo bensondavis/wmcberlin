@@ -36,8 +36,7 @@ const SlideShow = ({ images }: SlideShowProps) => {
       />
 
       <Box className={styles["gradient-filter"]}>
-      <Typography className={styles.desc}>{images[index].desc}</Typography>
-
+        <Typography className={styles.desc}>{images[index].desc}</Typography>
       </Box>
     </div>
   );

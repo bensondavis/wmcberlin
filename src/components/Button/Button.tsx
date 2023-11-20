@@ -23,7 +23,9 @@ const Button = ({
   disabled,
   onClick,
 }: ButtonProps) => {
-  const classNames = cx(styles.button, styles[`button-${variant}`], className, {[styles.disabled]: disabled});
+  const classNames = cx(styles.button, styles[`button-${variant}`], className, {
+    [styles.disabled]: disabled,
+  });
   return (
     <MuiButton
       className={classNames}

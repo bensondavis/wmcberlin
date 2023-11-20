@@ -19,7 +19,7 @@
 
 .dot {
   padding: 0 10px;
-  color: white
+  color: white;
 }
 
 @media screen and (width < 600px) {

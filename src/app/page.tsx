@@ -6,7 +6,6 @@ import { Box } from "@mui/material";
 import Register from "@/components/PageSection/Register/Register";
 
 export default function Home() {
-  
   return (
     <main className={styles.main}>
       <Hero />

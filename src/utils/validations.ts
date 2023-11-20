@@ -53,7 +53,7 @@ const phoneValidation = (value: string) => {
   if (!value.match(phoneRegex)) {
     return {
       error: true,
-      message: "Invalid phone number",
+      message: "Invalid phone number! Start with 0 or +49",
     };
   }
 
@@ -63,4 +63,4 @@ const phoneValidation = (value: string) => {
   };
 };
 
-export {isEmpty, textValidation, emailValidation, phoneValidation };
+export { isEmpty, textValidation, emailValidation, phoneValidation };

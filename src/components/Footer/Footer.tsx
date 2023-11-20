@@ -5,7 +5,10 @@ import EmailIcon from "@mui/icons-material/Email";
 const Footer = () => {
   return (
     <Box className={styles["footer-container"]}>
-      <Stack direction={{ md: "row", sm: "row", xs: "column" }} className={styles["margin-y-10"]}>
+      <Stack
+        direction={{ md: "row", sm: "row", xs: "column" }}
+        className={styles["margin-y-10"]}
+      >
         <Typography className={styles.text}>WMC Berlin</Typography>
         <Typography className={styles.dot}>•</Typography>
         <Box className={styles.email}>

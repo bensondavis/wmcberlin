@@ -53,7 +53,9 @@ const Drawer = ({ open, drawerItems, onClose }: DrawerProps) => {
                 onClose(false);
               }}
             >
-              <ListItemIcon className={styles["list-icon"]}>{item.icon}</ListItemIcon>
+              <ListItemIcon className={styles["list-icon"]}>
+                {item.icon}
+              </ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>

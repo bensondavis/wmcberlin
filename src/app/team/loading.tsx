@@ -13,7 +13,7 @@ const Loading = () => {
         alignItems: "center",
       }}
     >
-      <CircularProgress color="inherit"  />
+      <CircularProgress color="inherit" />
     </Box>
   );
 };

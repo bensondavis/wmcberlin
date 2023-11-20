@@ -11,10 +11,7 @@ export interface TeamCardProps {
 const TeamCard = ({ name, img, title }: TeamCardProps) => {
   return (
     <Stack direction={"column"} spacing={1} className={styles.card}>
-      <Box >
-      <Image src={img} alt="profile pic" className={styles.img} priority/>
-
-      </Box>
+      <Image src={img} alt="profile pic" className={styles.img} priority />
       <Typography className={styles.name}>{name}</Typography>
       <Typography className={styles.title}>{title}</Typography>
     </Stack>

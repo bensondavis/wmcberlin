@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Appbar />
         {children}
-      <Circle radius="60vh" color="#F8F5FE" className={"circle"} />
+        <Circle radius="60vh" color="#F8F5FE" className={"circle"} />
         <Footer />
       </body>
     </html>
