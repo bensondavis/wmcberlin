@@ -7,7 +7,7 @@ import { Box, Grid, Typography } from "@mui/material";
 const Team = () => {
   return (
     <Box className={cx("content-wrapper", styles["team-container"])}>
-      <Typography className={styles.title}>The Team</Typography>
+      <Typography className={styles.title}>Meet Our Team</Typography>
       <Grid container spacing={2} className={styles.container}>
         {TeamData.map((data, index) => (
           <Grid

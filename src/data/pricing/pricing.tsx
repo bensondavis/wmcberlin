@@ -1,4 +1,4 @@
-import { PricingCardProps } from "@/components/PricingCard/PricingCard";
+import PricingCardProps from "@/interfaces/priceCard";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import PersonIcon from "@mui/icons-material/Person";
 import SchoolIcon from "@mui/icons-material/School";

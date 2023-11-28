@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { People } from "@/components/RegistrationModel/RegistrationModel";
+import People from "@/interfaces/People";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();

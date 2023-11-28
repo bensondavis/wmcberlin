@@ -3,7 +3,8 @@ import Circle from "@/components/Circle/Circle";
 import Hero from "@/components/PageSection/Hero/Hero";
 import About from "@/components/PageSection/About/About";
 import { Box } from "@mui/material";
-import Register from "@/components/PageSection/Register/Register";
+import Offerings from "@/components/PageSection/Offerings/Offerings";
+import Join from "@/components/PageSection/Join/Join";
 
 export default function Home() {
   return (
@@ -16,8 +17,11 @@ export default function Home() {
           className={styles["main-circle"]}
         />
       </Box>
+      <Circle radius="60vh" color="#F8F5FE" className={styles.circle} />
+
       <About />
-      <Register />
+      <Offerings />
+      <Join />
     </main>
   );
 }

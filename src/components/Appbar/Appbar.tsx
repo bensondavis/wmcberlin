@@ -9,12 +9,14 @@ import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import Drawer from "../Drawer/Drawer";
-import type { drawerItem } from "../Drawer/Drawer";
-import Button, { ButtonProps } from "../Button/Button";
+import DrawerItemProps from "@/interfaces/drawerItem";
+import Button from "../Button/Button";
+import ButtonProps from "@/interfaces/button";
 import logo from "@/assets/logo.png";
 import navbarButtonsData from "@/data/navbar-buttons/navbarButtons";
 import "@fontsource-variable/lexend-deca";
 import { Lexend_Deca } from "next/font/google";
+import { usePathname } from "next/navigation";
 
 const lexaDeca = Lexend_Deca({
   weight: "800",
@@ -27,7 +29,7 @@ const navButtons: ButtonProps[] = navbarButtonsData.map((data) => ({
   href: data.href,
 }));
 
-const drawerItems: drawerItem[] = navbarButtonsData.map((data) => ({
+const drawerItems: DrawerItemProps[] = navbarButtonsData.map((data) => ({
   text: data.children,
   icon: data.startIcon,
   href: data.href,
@@ -35,6 +37,7 @@ const drawerItems: drawerItem[] = navbarButtonsData.map((data) => ({
 
 const Appbar = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleClick = () => {
     setOpen(true);
@@ -65,6 +68,7 @@ const Appbar = () => {
         direction={"row"}
         className={styles["nav-btns"]}
       >
+        {pathname !== "/" ? <Button href="/">Home</Button> : null}
         {navButtons.map((button, index) => (
           <Button
             key={index}

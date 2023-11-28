@@ -1,11 +1,11 @@
-import { SlideShowImg } from "@/components/SlideShow/SlideShow";
+import SlideShowImgProps from "@/interfaces/slideShowImg";
 import pic1 from "../../assets/pic1.jpg";
 import pic2 from "../../assets/pic2.jpg";
 import pic3 from "../../assets/gallery/DJI_0725.jpg";
 import pic4 from "../../assets/gallery/DSC02794.jpg";
 import pic5 from "../../assets/gallery/DSC06499.jpg";
 
-const slideShowData: SlideShowImg[] = [
+const slideShowData: SlideShowImgProps[] = [
   {
     img: pic1,
     desc: "Onam 2022",

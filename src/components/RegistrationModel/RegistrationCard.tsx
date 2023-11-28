@@ -2,14 +2,12 @@
 
 import { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "./RegistrationModel.module.css";
+import styles from "./RegistrationCard.module.css";
 import cx from "classnames";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import Dialog from "@mui/material/Dialog";
 import Typography from "@mui/material/Typography";
 import TextField from "../TextField/TextField";
-import CancelIcon from "@mui/icons-material/Cancel";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { IconButton } from "@mui/material";
@@ -19,20 +17,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { BASE_API_URL } from "@/utils/constants";
-import { isEmpty } from "@/utils/validations";
+import RegistrationCardProps from "@/interfaces/RegistrationCard";
+import People from "@/interfaces/People";
 
-export interface People {
-  fname: string;
-  lname: string;
-}
-
-interface RegistrationModelProps {
-  open: boolean;
-  onClose: () => void;
-  type: "Student" | "Family" | "Single";
-}
-
-const RegistrationModel = ({ open, onClose, type }: RegistrationModelProps) => {
+const RegistrationCard = ({ type }: RegistrationCardProps) => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -112,7 +100,6 @@ const RegistrationModel = ({ open, onClose, type }: RegistrationModelProps) => {
         }
       )
       .then(() => {
-        onClose();
         handleReset();
         setLoading(false);
         setSnackBar({
@@ -151,12 +138,8 @@ const RegistrationModel = ({ open, onClose, type }: RegistrationModelProps) => {
 
   return (
     <>
-      <Dialog open={open} onClose={onClose} className={cx(styles.modal)}>
+      <Box className={cx(styles.modal)}>
         <Box className={styles.card} component="form" autoComplete="off">
-          <IconButton className={styles.cancel} onClick={onClose}>
-            <CancelIcon />
-          </IconButton>
-          <Typography className={styles.title}>Register</Typography>
           <Stack direction={"column"} spacing={3}>
             <TextField
               label="First Name"
@@ -272,7 +255,7 @@ const RegistrationModel = ({ open, onClose, type }: RegistrationModelProps) => {
             Submit
           </Button>
         </Box>
-      </Dialog>
+      </Box>
       <Backdrop sx={{ color: "#fff", zIndex: 11 }} open={loading}>
         <CircularProgress color="inherit" />
       </Backdrop>
@@ -306,4 +289,4 @@ const RegistrationModel = ({ open, onClose, type }: RegistrationModelProps) => {
   );
 };
 
-export default RegistrationModel;
+export default RegistrationCard;

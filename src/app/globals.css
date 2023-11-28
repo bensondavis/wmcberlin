@@ -2,7 +2,7 @@
   --color-white: #fff;
 
   --color-purple-dark-900: #33186b;
-  --color-purple-dark-800: #3d1f80;
+  --color-purple-dark-800: #241966;
   --color-purple-dark-700: #491fa3;
   --color-purple-dark-600: #4d0fce;
   --color-purple-dark-500: #4d0fce;
@@ -60,14 +60,6 @@ a {
   position: relative;
   width: calc(100% - 20px);
   margin: 0 auto;
-}
-
-.circle {
-  position: absolute;
-  top: -10%;
-  right: -30%;
-  z-index: -10;
-  overflow: hidden;
 }
 
 @media screen and (width < 900px) {

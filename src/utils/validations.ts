@@ -41,7 +41,7 @@ const emailValidation = (value: string) => {
 };
 
 const phoneValidation = (value: string) => {
-  const phoneRegex = /(\+49|0)[1-9]{1}[0-9]{9,14}/g;
+  const phoneRegex = /(0|\+49)\d{11,17}/g;
 
   if (isEmpty(value)) {
     return {

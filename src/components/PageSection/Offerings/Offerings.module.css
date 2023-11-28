@@ -1,0 +1,63 @@
+.main-container {
+  background-color: #f8f8fc;
+  width: 100%;
+  padding: 150px 0;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  font-family: inherit;
+}
+
+.heading {
+  color: var(--color-purple-light-400);
+  font-size: 0.822rem;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.card-icon {
+  width: 100px;
+  height: 100px;
+  padding: 25px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.card-icon svg {
+  fill: var(--color-purple-light-400);
+}
+
+.card-desc {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  font-family: inherit;
+}
+
+.offer-desc-container {
+  max-width: 1100px;
+  width: 100%;
+  padding: 50px 0px;
+  margin: auto;
+}
+
+.offer-desc-text {
+  font-weight: bold;
+  text-align: center;
+  font-family: inherit;
+}
+
+@media screen and (width < 900px) {
+  .main-container {
+    padding: 100px 0;
+  }
+}

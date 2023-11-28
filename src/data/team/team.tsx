@@ -1,4 +1,4 @@
-import { TeamCardProps } from "@/components/TeamCard/TeamCard";
+import TeamCardProps from "@/interfaces/teamCard";
 import anu from "../../assets/team/anu-varghese.jpg";
 import sabarish from "../../assets/team/sabarish-panicker.jpg";
 import vinayak from "../../assets/team/vinayak.jpg";

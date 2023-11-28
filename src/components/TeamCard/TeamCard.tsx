@@ -1,12 +1,7 @@
 import styles from "./TeamCard.module.css";
-import { Box, Stack, Typography } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
-
-export interface TeamCardProps {
-  name: string;
-  img: StaticImageData;
-  title: string;
-}
+import { Stack, Typography } from "@mui/material";
+import Image from "next/image";
+import TeamCardProps from "@/interfaces/teamCard";
 
 const TeamCard = ({ name, img, title }: TeamCardProps) => {
   return (

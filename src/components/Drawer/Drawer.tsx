@@ -1,28 +1,20 @@
 import React from "react";
 import styles from "./Drawer.module.css";
 import { default as MuiDrawer } from "@mui/material/Drawer";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-
-export interface drawerItem {
-  text: React.ReactNode;
-  icon?: React.ReactNode;
-  href?: string;
-}
-
-interface DrawerProps {
-  open: boolean;
-  drawerItems: drawerItem[];
-  onClose: (toggle: boolean) => void;
-}
+import DrawerProps from "@/interfaces/drawer";
+import HomeIcon from "@mui/icons-material/Home";
 
 const Drawer = ({ open, drawerItems, onClose }: DrawerProps) => {
   const router = useRouter();
+  const pathname = usePathname();
+
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
@@ -44,6 +36,16 @@ const Drawer = ({ open, drawerItems, onClose }: DrawerProps) => {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
+        {pathname !== "/" ? (
+          <ListItem disablePadding>
+            <ListItemButton href="/">
+              <ListItemIcon className={styles["list-icon"]}>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText>Home</ListItemText>
+            </ListItemButton>
+          </ListItem>
+        ) : null}
         {drawerItems.map((item, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton

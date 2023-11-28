@@ -1,0 +1,73 @@
+.main-container {
+  width: 100%;
+  padding: 150px 0;
+  background-color: var(--color-purple-dark-800);
+}
+
+.heading {
+  color: var(--color-text-light);
+  font-size: 0.822rem;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.card-icon-container {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border-radius: 50%;
+  border: 3px solid var(--color-purple-dark-800);
+}
+
+.card-icon-container svg {
+  fill: var(--color-purple-dark-800);
+}
+
+.card {
+  background-color: var(--color-text-light);
+  height: 100%;
+  border-radius: 20px;
+  padding: 50px 30px;
+}
+
+.card-title {
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.card-desc {
+  font-family: inherit;
+}
+
+.grid-container {
+  margin-top: 50px;
+}
+
+.desc {
+  font-family: inherit;
+  color: var(--color-text-light);
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.btn {
+  margin-top: 50px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+}
+
+@media screen and (width < 900px) {
+  .main-container {
+    padding: 100px 0;
+  }
+}

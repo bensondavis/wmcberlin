@@ -5,7 +5,7 @@ import Divider from "@mui/material/Divider";
 
 export default function NotFound() {
   return (
-    <Box sx={{ width: "100%", height: "auto" }}>
+    <Box sx={{ width: "100%", height: "100vh" }}>
       <Box
         sx={{
           position: "absolute",

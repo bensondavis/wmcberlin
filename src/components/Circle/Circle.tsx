@@ -1,8 +1,4 @@
-interface CircleProps {
-  radius: string;
-  color: string;
-  className?: string;
-}
+import CircleProps from "@/interfaces/circle";
 
 const Circle = ({ radius, color, className }: CircleProps) => {
   return (

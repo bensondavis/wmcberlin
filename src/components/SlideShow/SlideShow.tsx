@@ -4,16 +4,12 @@ import styles from "./SlideShow.module.css";
 import { Paper, Typography, Skeleton, Box } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
+import SlideShowImgProps from "@/interfaces/slideShowImg";
 
 const duration = 5000;
 
-export interface SlideShowImg {
-  img: StaticImageData;
-  desc: string;
-}
-
 interface SlideShowProps {
-  images: SlideShowImg[];
+  images: SlideShowImgProps[];
 }
 
 const SlideShow = ({ images }: SlideShowProps) => {
